@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html 
+xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+       
+      >
+      <h:head></h:head>
+    <body>
+    
+    
+  
+  <p:column selectionMode="multiple" style="width:2%" />  
+       
+       
+       <h:form id="form">  
+  
+  
+  
+  
+  
+  
+    <p:panel id="panel" header="New User" style="margin-bottom:10px;">  
+        <p:messages id="messages" />  
+        <h:panelGrid columns="2">  
+        
+        <h:outputText value="Civilité:* " />  
+        <p:selectOneMenu id="civilite" value="#{userBean.newUser.civilite}">  
+         
+            <f:selectItem itemLabel="M." itemValue="M" />  
+            <f:selectItem itemLabel="Mlle" itemValue="Mlle" />  
+            <f:selectItem itemLabel="Mme" itemValue="Mme" />  
+        </p:selectOneMenu> 
+            
+            <h:outputLabel for="nom" value="Nom: *" />  
+            <p:inputText id="nom" value="#{userBean.newUser.firstname}" required="true" >  
+            </p:inputText>  
+           
+           
+            
+            <h:outputLabel for="prenom" value="Prenom: *" />  
+            <p:inputText id="prenom"  value="#{userBean.newUser.lastname}" required="true" >  
+            </p:inputText>  
+            
+            <h:outputLabel for="email" value="Email: *" />  
+            <p:inputText id="email" value="#{userBean.newUser.email}" required="true" >  
+            </p:inputText>  
+  
+           
+              
+            
+            <h:outputLabel for="pwd1" value="Password 1: *" />  
+            <p:password id="pwd1" value="#{userBean.newUser.password}" match="pwd2" label="Password 1"/>  
+  
+            <h:outputLabel for="pwd2" value="Password 2: *" />  
+            <p:password id="pwd2" value="#{userBean.newUser.password}" label="Password 2" required="true"/>  
+        
+            
+            
+             <h:outputLabel for="telephone" value="Telephone: * " />  
+            <p:inputMask  id="telephone" value="#{userBean.newUser.telephone}" mask="9999-999999" >
+            
+            </p:inputMask>  
+            
+            <h:outputLabel for="cin" value="CIN: *" />  
+            <p:inputText id="cin" value="#{userBean.newUser.cin}" required="true" >  
+                </p:inputText>  
+                
+                 
+             <h:outputLabel for="age" value="Age: " />  
+            <p:inputText id="age" value="#{userBean.newUser.age}" required="true" >  
+                </p:inputText>  
+                </h:panelGrid>  
+                
+                <h:panelGrid columns="3"> 
+            <h:outputLabel value="Ville: " for="arrivee" />
+                          <p:spacer width="48" /> 
+               
+            <p:autoComplete id="ville" dropdown="true" value="#{userBean.newUser.ville}"   
+                    completeMethod="#{userBean.complete2()}" var="ville" itemLabel="#{ville.ville}" itemValue="#{ville}" converter="villeConverter">
+                    
+                    <f:converter converterId="villeConverter" /> 
+                    </p:autoComplete> 
+                    
+                     
+              
+            
+             
+            
+            
+        </h:panelGrid>  
+    </p:panel>  
+  
+    <p:commandButton value="Submit"  actionListener="#{userBean.createUser}" 
+    oncomplete="handleLoginRequest(xhr, status, args,'form')"  update=":growl"/>  
+                  
+   
+  
+</h:form>  
+           <p:growl id="growl" showDetail="true"/>
+           <script type="text/javascript">   
+
+           function handleLoginRequest(xhr, status, args,formName) {  
+               
+        	   if(!args.validationFailed) {  
+                   clearForm(formName);
+               }   
+                
+           }
+                  
+        function clearForm(formName){
+        jQuery('#'+formName).each(function(){
+	        this.reset();
+	});
+        }
+        
+        </script>  
+                    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+       xmlns:h="http://java.sun.com/jsf/html"
+      >
+    <body>
+	    <ui:composition>
+	    
+	      <header>
+	  <div class="centered">
+
+	  <h1><a href="./dashboard.html" class="logo">Light life Admin Panel</a></h1>
+
+ 	  <ul class="menu-head">
+      	   <li><a href="#"><span id="visit-icon">Tableau de bord</span></a></li>
+           <li><a href="#"><span id="statistics-icon">Statistiques</span></a></li>
+           <li><a href="#"><span id="users-icon">Utilisateurs</span></a></li>
+      </ul>
+
+      <nav>
+        <ul>
+            <li id="login">
+                <a id="login-trigger" href="#">
+ 					<span id="user-panel-check"></span>
+  					<span id="user-panel-title">Bienvenu,       <strong>#{uab.user.lastname}</strong></span>
+                    <span id="user-panel"></span>
+                </a>
+                <div id="login-content">
+                  <ul>
+                  <li>
+                  
+               <a href="${facesContext.externalContext.requestContextPath}/admincp/#{uab.user.roles.get(0).rolename}/userParams.xhtml"><span><h:outputText value="&#160;" />Paramètres</span> <img src="${facesContext.externalContext.requestContextPath}/resources/images/setting.png" alt="" /></a>
+                  
+                  </li>
+                  <li>
+
+ <h:form>
+                   <h:commandButton value="Déconnecter" styleClass="logoutt" action="#{loginBean.logout()}" ajax="false">
+                   
+                   </h:commandButton>
+                   </h:form>
+</li>
+                  </ul>
+               </div>
+            </li>
+        </ul>
+      </nav>
+       </div>
+ </header>
+		 
+		 
+	    </ui:composition>
+    </body>
+</html>

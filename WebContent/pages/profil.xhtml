@@ -1,0 +1,67 @@
+<ui:composition template="/template/template_client/layout.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+    	<ui:define name="title">Covoiturage 0.1</ui:define>
+    		
+ <ui:define name="content">
+ 
+ <div class="header header_thin" style="background-image:url(${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/slider_1_1.jpg)">
+            
+	<div class="header_title">
+    	<h1><span>MODIFIER VOTRE</span> PROFIL</h1>
+    </div>
+
+</div>
+
+
+<div class="middle_row row_white breadcrumbs">
+    <div class="container">
+        <p><a href="index.html">Acceuil</a>  <span class="separator">></span>  <a href="offers-list.html">Profil</a></p>
+        <a href="index.html" class="link_back">Retour en arrière</a>
+    </div>
+</div>
+<div id="middle" class="full_width">
+	<div class="container clearfix">  
+    
+		<!-- content -->
+        <div class="content">
+        	
+            
+            
+            <!-- details tabs -->
+            <div class="details_tabs">
+	            <ul class="tabs linked">
+	                <li class=""><a href="#t_overview" class="current" style="outline: none;"><span>Mon profil</span></a></li>
+	                <li><a href="#t_description" style="outline: none;" class=""><span>Validation</span></a></li>
+	               </ul>
+	            <div id="t_overview" class="tabcontent clearfix" style="display: block;">
+                	<iframe src="user_profil.xhtml" height="650" width="900">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+	            </div>
+                
+	            <div id="t_description" class="tabcontent clearfix" style="display: none;">
+	            	
+                    
+	            </div>
+	            
+                
+	            
+               
+            </div>
+            <!--/ details tabs -->
+            
+         
+            
+        </div>
+        <!--/ content -->
+        
+              
+    </div>
+</div>
+
+ 
+ </ui:define>
+    	</ui:composition>

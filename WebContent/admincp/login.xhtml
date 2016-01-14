@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"	>
+<h:head>
+	
+	<title>D-SCRAP 0.1 Beta | Login</title>
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/validationEngine.jquery.css" type="text/css" media="screen"  />
+    
+	<link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/login.css" type="text/css" media="screen"  />
+    <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/font.css" />
+    
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/resources/lib/jquery.min.js"></script>
+
+    <script src="${facesContext.externalContext.requestContextPath}/resources/lib/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+    <script src="${facesContext.externalContext.requestContextPath}/resources/lib/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+            jQuery(document).ready(function(){
+                // binds form submission and fields to the validation engine
+                jQuery("#form-login").validationEngine();
+            }); 
+						
+	
+    </script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<meta charset="UTF-8" />
+</h:head>
+
+<h:body>
+
+    <section id="form"><h:form id="form-login" styleClass="formular" prependId="false" onkeypress="if (event.keyCode == 13) { document.getElementById('loginBtn').click(); return false; }">
+     <div id="content-header">
+<h:messages globalOnly="true" infoClass="info" />
+				  <p id="logo">Page d'authentification</p>
+                  <p>Pour s'authentifier, saisissez votre username et votre mot de passe.</p>
+                </div> 
+    	
+     		<div id="content">
+                 <strong><span style="color: red;"><h:outputText id="errorLogin" value="#{loginBean.msg}" /></span></strong>
+                 <h:inputText value="#{loginBean.username}" name="username" id="req" styleClass="validate[required] text-input" pt:placeholder="Username">
+                 </h:inputText> 
+                  
+      			 <br /><br />
+      			 <h:inputSecret value="#{loginBean.password}" name="pass" id="pass" styleClass="validate[required] text-input" pt:placeholder="Mot de passe">
+      			 </h:inputSecret>
+      			 
+      			 <br /><br />
+      			 
+                 <div class="buttons">
+                 <input type="submit" class="button-a gray" value="Mot de passe publié?" />
+                 <h:commandButton name="go"  styleClass="button-a blue" value="LOG IN" id="loginBtn" ajax="true">
+                      <f:ajax execute="@form" listener="#{loginBean.login2}" render="errorLogin" />
+                 </h:commandButton>
+                 
+                 
+                 
+                 </div>
+            </div>
+		</h:form>
+		
+		
+
+    </section>
+    
+</h:body>
+</html>

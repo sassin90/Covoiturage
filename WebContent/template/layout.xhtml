@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+	<title><ui:insert name="title">Covoiturage 0.1</ui:insert></title>
+
+
+	<meta name="description" content="" />
+    <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/font.css" />
+    <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/style.css" />
+    
+   
+    <!--[if lt IE 9]>
+	<script src="${facesContext.externalContext.requestContextPath}/resources/lib/html5.js"></script>
+	<![endif]-->
+	
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/resources/lib/jquery.min.js"></script>
+    <script>
+	var jq = jQuery.noConflict();
+</script>
+    <script src="${facesContext.externalContext.requestContextPath}/resources/lib/jquery-ui-1.8.16.custom.min.js"></script>
+<script>
+	var jq = jQuery.noConflict();
+</script>
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/resources/lib/functions.js"></script>
+
+
+    </h:head>
+ 
+
+		 
+    <h:body>
+	 <ui:insert name="header" >
+		  <ui:include src="/template/header.xhtml" />
+		</ui:insert>
+		
+		<section id="main-content">
+			<section id="content">
+  				<div class="centered">
+ 
+ 					<ui:insert name="content" >
+	 	  				<ui:include src="/template/content.xhtml" />
+	   				</ui:insert>	
+ 
+  					<ui:insert name="sidebar" >
+	 	  				<ui:include src="/template/sidebar.xhtml" />
+	   				</ui:insert>
+	   	    
+	   	    	</div>
+  			</section>
+			
+			<div class="empty"></div>
+			
+		</section>   <!--end main-content-->
+	
+	    <ui:insert name="footer" >
+	 	  	<ui:include src="/template/footer.xhtml" />
+	   	</ui:insert>
+	</h:body>
+</html>

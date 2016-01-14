@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       
+      >
+    <body>
+    
+    
+   
+	    <ui:composition>
+	    
+	  <!-- header top bar -->
+	<div class="header_top">
+		<div class="container">
+		
+			<div class="logo">
+				<a href="index.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/logo.png" alt="" /></a>
+			</div>
+			
+			<!-- topmenu -->    
+			<nav id="topmenu" class="clearfix">            
+				<ul class="dropdown">    
+                	<li class="menu-level-0 mega-nav"><a href="special-offers.html"><span><font style="color:rgb(242, 90, 35);">RECHERCHE</font></span></a>
+                    	<ul class="submenu-1">
+							<li class="menu-level-1 mega-nav-widget">
+								<!-- widget recent entries -->
+								<div class="widget-container widget_recent_entries"> 
+									<div class="container">
+										<br/><br/>
+										<b style="font-size:22px;color:#fff">Trouvez votre covoiturage !</b><br/><br/><br/>
+										<form action="#" class="search_form advsearch_hide clearfix">
+											<table>
+											<tr>
+												<td width="130px"><label class="label_title" style="color:#ddd">Ville de départ:</label></td>
+												<td>
+													<select class="select_styled" name="ville_depart">
+														<option value="1">Tétouan</option>
+														<option value="2">Tanger</option>
+														<option value="3">Rabat</option>
+														<option value="4">Casablanca</option>
+														<option value="5">Larache</option>
+														<option value="6">Nador</option>                                                
+														<option value="7">Ouejda</option>
+														<option value="8">Hocima</option>                   
+													</select>
+													<br/><br/>
+												</td>
+											</tr>
+											<tr>
+												<td><label class="label_title" style="color:#ddd">Ville d'arrivée:</label></td>
+												<td>
+													<select class="select_styled" name="ville_arrivee">
+														<option value="1">Tétouan</option>
+														<option value="2">Tanger</option>
+														<option value="3">Rabat</option>
+														<option value="4">Casablanca</option>
+														<option value="5">Larache</option>
+														<option value="6">Nador</option>                                                
+														<option value="7">Ouejda</option>
+														<option value="8">Hocima</option>                                          
+													</select>
+													<br/><br/>
+												</td>
+											</tr>
+											<tr>
+												<td><label class="label_title" style="color:#ddd">Date:</label></td>
+												<td><input class="input_styled" type="text" id="datepicker" name="date" style="width:148px"/><br/><br/></td>
+											</tr>
+											<tr>
+												<td><label class="label_title" id="adv_search_open" style="color:#ddd"></label></td>
+												<td><span class="btn btn_search"><input type="submit" value="Rechercher" style="width:148px" /></span></td>
+											</tr>
+										</table>
+										</form>
+										</div>
+								</div>
+								<!--/ widget recent entries -->
+							</li>
+							<li class="menu-level-1 mega-nav-widget" style="width:0px"></li>								
+						</ul>  
+                    </li>
+                    <c:if test="${sessionScope['userLogin'] != null}">
+					<li class="menu-level-0 mega-nav"><a href="pages/trajet.xhtml"><span><font style="color:rgb(98, 193, 237);">PROPOSER</font></span></a>
+                    	<ul class="submenu-1">
+							<li class="menu-level-1 mega-nav-widget">
+								<div class="widget-container widget_recent_entries"> 
+									<div class="container">
+										<br/><br/>
+										<b style="font-size:22px;color:#fff">Vous avez une voiture ?</b><br/><br/>
+											<img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/icons/car_icon.png" style="padding-left:90px"/>
+											<form style="padding-left:56px" action="pages/trajet.xhtml">
+												<input class="publier2" type="submit" value=" Proposer un trajet " style="color:#fff;font-size:15px;height:42px;padding-left:10px;padding-right:10px"/>
+											</form>
+									</div>
+								</div>
+							</li>
+							<li class="menu-level-1 mega-nav-widget" style="width:0px"></li>
+						</ul>  
+                    </li>
+                    </c:if>
+                    <c:if test="${sessionScope['userLogin'] == null}">
+					<li class="menu-level-0"><a href="inscription.xhtml"><span>S'inscrire</span></a></li> 
+					     
+					<li class="menu-level-0 mega-nav"><a href="#"><span>Se connecter</span></a>
+						<ul class="submenu-1">
+							<li class="menu-level-1 mega-nav-widget">
+								<!-- widget recent entries -->
+								<div class="widget-container widget_recent_entries"> 
+									<div class="container">
+										<br/><br/>
+										<b style="font-size:22px;color:#fff">Trouvez votre covoiturage !</b><br/><br/><br/>
+										
+										<h:form id="form-login">
+										
+											<table>
+												<tr valign="middle">
+													<td width="110px"><label class="label_title" style="color:#ddd">E-mail:</label></td>
+													<td><h:inputText value="#{loginUserBean.username}" style="width:160px" id="datepicker" name="datepicker" /><br/><br/></td>
+												</tr>
+												<tr>
+													<td><label class="label_title" style="color:#ddd">Mot de passe:</label></td>
+													<td>
+													<h:inputSecret value="#{loginUserBean.password}" class="input_styled" id="datepicker2" name="date" style="width:160px"></h:inputSecret>
+													<br/><br/></td>
+												</tr>
+												<tr>
+													<td><label class="label_title" id="adv_search_open" style="color:#ddd"></label></td>
+													<td>
+									
+                 
+                  <p:commandButton id="loginButton" value="Se connecter"   
+                    actionListener="#{loginUserBean.login2}"  update=":growl" />  
+                    
+													<!--  <input type="submit" value="Se connecter" style="width:160px" /> -->
+													
+													</td>
+												</tr>
+											</table>
+										</h:form>
+										<p:growl id="growl" showDetail="true"/>
+										</div>
+								</div>
+								<!--/ widget recent entries -->
+							</li>
+							<li class="menu-level-1 mega-nav-widget" style="width:0px"></li>								
+						</ul>
+					</li>
+					</c:if>
+					
+	                <c:if test="${sessionScope['userLogin'] != null}">
+                    <li class="menu-level-0"><a href="#"><span>${sessionScope['userLogin'].lastname}</span></a>
+						<ul class="submenu-1">
+                        	<li class="menu-level-1"><a href="blog.html"><span>Tableau de bord</span></a></li>							
+							<li class="menu-level-1"><a href="page-about.html"><span>Vos annonces</span></a></li>
+							<li class="menu-level-1"><a href="page-faq.html"><span>Vos réservations</span></a></li>
+                            <li class="menu-level-1"><a href="page-pricing.html"><span>Vos messages</span></a></li>
+                            <li class="menu-level-1"><a href="#"><span>Vos alertes</span></a></li>
+							<li class="menu-level-1"><a href="blog-sidebar-left.html"><span>Vos avis</span></a></li>
+							<li class="menu-level-1"><a href="page-404.html"><span>Votre profil</span></a></li>
+							<li style="text-align: center;"><h:form><h:commandButton value="Déconnecter" styleClass="logoutt" action="#{loginUserBean.logout()}"></h:commandButton></h:form></li>
+						</ul>
+					</li> 
+					</c:if>
+										<li class="menu-level-0"><a href="inscription.xhtml"><span>Contact</span></a></li>                              
+					
+					<li class="menu-level-0"><a href="contact.html"><span>Location</span></a></li>   
+				</ul>   
+			</nav>    
+		<!--/ topmenu -->
+		</div>
+	</div>
+	<!--/ header top bar -->
+		
+<!-- header -->
+		 
+	    </ui:composition>
+    </body>
+</html>

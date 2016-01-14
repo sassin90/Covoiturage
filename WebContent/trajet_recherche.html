@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="author" content="ThemeFuse"/>
+<meta name="keywords" content=""/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AutoTrader - Homepage</title>
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,600,700|PT+Serif+Caption:400,400italic' rel='stylesheet' type='text/css'/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link href="style.css" media="screen" rel="stylesheet"/>
+<link href="screen.css" media="screen" rel="stylesheet"/>
+<!-- custom CSS -->
+<link href="custom.css" media="screen" rel="stylesheet"/>
+<!-- main JS libs  -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/respond.min.js"></script>					 
+<script src="js/libs/jquery.min.js"></script>
+<!-- scripts  -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/general.js"></script>
+<script src="js/hoverIntent.js"></script>
+<!-- carousel -->
+<script src="js/jquery.carouFredSel.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<!-- styled select -->
+<link rel="stylesheet" href="css/cusel.css"/>
+<script src="js/cusel-min.js"></script>
+<link href="rs-plugin/css/settings.css" media="screen" rel="stylesheet"/>
+<script src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<!-- custom input -->
+<script src="js/jquery.customInput.js"></script>
+<!-- range slider -->
+<link href="css/jslider.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.slider.bundle.js"></script>
+</head>
+
+<body>
+<div class="body_wrap homepage">
+	
+	<!-- header top bar -->
+	<div class="header_top">
+		<div class="container">
+		
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt=""/></a>
+			</div>
+			
+			<!-- topmenu -->    
+			<nav id="topmenu" class="clearfix">            
+				<ul class="dropdown">    
+                	<li class="menu-level-0 mega-nav"><a href="trajet_recherche.html"><span><font style="color:rgb(242, 90, 35);">RECHERCHE</font></span></a>
+                    	<ul class="submenu-1">
+							<li class="menu-level-1 mega-nav-widget">
+								<!-- widget recent entries -->
+								<div class="widget-container widget_recent_entries"> 
+									<div class="container">
+										<b style="font-size:22px;color:#fff">Trouvez votre covoiturage !</b><br/><br/><br/>
+										<form action="trajet_liste.html" class="search_form advsearch_hide clearfix">
+											<table>
+											<tr>
+												<td width="130px"><label class="label_title" style="color:#ddd">Ville de départ:</label></td>
+												<td>
+													<select class="select_styled" name="ville_depart">
+													<option value="0" class="default">- CHOISIR -</option>
+														<option value="1">Tétouan</option>
+														<option value="2">Tanger</option>
+														<option value="3">Rabat</option>
+														<option value="4">Casablanca</option>
+														<option value="5">Larache</option>
+														<option value="6">Nador</option>                                                
+														<option value="7">Ouejda</option>
+														<option value="8">Hocima</option>                   
+													</select>
+													<br/><br/>
+												</td>
+											</tr>
+											<tr>
+												<td><label class="label_title" style="color:#ddd">Ville d'arrivée:</label></td>
+												<td>
+													<select class="select_styled" name="ville_arrivee">
+													<option value="0" class="default">- CHOISIR -</option>
+														<option value="1">Tétouan</option>
+														<option value="2">Tanger</option>
+														<option value="3">Rabat</option>
+														<option value="4">Casablanca</option>
+														<option value="5">Larache</option>
+														<option value="6">Nador</option>                                                
+														<option value="7">Ouejda</option>
+														<option value="8">Hocima</option>                                          
+													</select>
+													<br/><br/>
+												</td>
+											</tr>
+											<tr>
+												<td><label class="label_title" style="color:#ddd">Date:</label></td>
+												<td><input class="input_styled" type="text" id="datepicker" name="date" style="width:148px"/><br/><br/></td>
+											</tr>
+											<tr>
+												<td><label class="label_title" id="adv_search_open" style="color:#ddd">&nbsp;</label></td>
+												<td><span class="btn btn_search"><input type="submit" value="Rechercher" style="width:148px"></span></td>
+											</tr>
+										</table>
+										</form>
+										</div>
+								</div>
+								<!--/ widget recent entries -->
+							</li>
+							<li class="menu-level-1 mega-nav-widget" style="width:0px"></li>								
+						</ul>  
+                    </li>
+					<li class="menu-level-0 mega-nav"><a href="trajet_proposer.html"><span><font style="color:rgb(98, 193, 237);">PROPOSER</font></span></a>
+                    	<ul class="submenu-1">
+							<li class="menu-level-1 mega-nav-widget">
+								<div class="widget-container widget_recent_entries"> 
+									<div class="container">
+										<b style="font-size:22px;color:#fff">Vous avez une voiture ?</b><br/><br/>
+											<img src="images/icons/car_icon.png" style="padding-left:90px"/>
+											<form action="trajet_proposer.html" style="padding-left:56px">
+												<input class="publier2" type="button" value=" Proposer un trajet " style="color:#fff;font-size:15px;height:42px;padding-left:10px;padding-right:10px"/>
+											</form>
+									</div>
+								</div>
+							</li>
+							<li class="menu-level-1 mega-nav-widget" style="width:0px"></li>
+						</ul>  
+                    </li>
+					<li class="menu-level-0"><a href="inscription.html"><span>S'inscrire</span></a></li>       
+					<li class="menu-level-0 mega-nav"><a href="connexion.html"><span>Se connecter</span></a>
+						<ul class="submenu-1">
+							<li class="menu-level-1 mega-nav-widget">
+								<!-- widget recent entries -->
+								<div class="widget-container widget_recent_entries"> 
+									<div class="container">
+										<b style="font-size:22px;color:#fff">identification</b><br/><br/><br/>
+										<form action="#" class="search_form advsearch_hide clearfix">
+											<table>
+												<tr valign="middle">
+													<td width="110px"><label class="label_title" style="color:#ddd">E-mail:</label></td>
+													<td><input class="input_styled" type="text" id="datepicker" name="email" style="width:160px"/><br/><br/></td>
+												</tr>
+												<tr>
+													<td><label class="label_title" style="color:#ddd">Mot de passe:</label></td>
+													<td><input class="input_styled" type="password" id="datepicker" name="mpd" style="width:160px"/><br/><br/></td>
+												</tr>
+												<tr>
+													<td><label class="label_title" id="adv_search_open" style="color:#ddd">&nbsp;</label></td>
+													<td><span class="btn"><input type="submit" value="Se connecter" style="width:160px"></span></td>
+												</tr>
+											</table>
+										</form>
+										</div>
+								</div>
+								<!--/ widget recent entries -->
+							</li>
+							<li class="menu-level-1 mega-nav-widget" style="width:0px"></li>								
+						</ul>
+					</li>
+					<!--li class="menu-level-0 mega-nav"><a href=""><span>Comment </span></a>
+	                	<ul class="submenu-1">                      	                                                                                                  
+	                        <li class="menu-level-1 mega-nav-widget" style="width:510px">
+								<br/><br/>  
+								<div class="widget-container widget_text" > 
+									 <video width="460" height="259" controls><source src="images/video/comment.mp4" type="video/mp4"/>Your browser does not support the video tag.</video>
+									<br/>
+								 </div>
+	                        </li>	                        
+                            <li class="menu-level-1" style="width:0px">
+							</li>                        	                                                                    
+	                    </ul>
+	                </li-->
+                    <li class="menu-level-0"><a href="mon_profile.html"><span>Karim</span></a>
+						<ul class="submenu-1">
+                        	<li class="menu-level-1"><a href="blog.html"><span>Tableau de bord</span></a></li>							
+							<li class="menu-level-1"><a href="page-about.html"><span>Vos annonces</span></a></li>
+							<li class="menu-level-1"><a href="page-faq.html"><span>Vos réservations</span></a></li>
+                            <li class="menu-level-1"><a href="page-pricing.html"><span>Vos messages</span></a></li>
+                            <li class="menu-level-1"><a href="#"><span>Vos alertes</span></a></li>
+							<li class="menu-level-1"><a href="blog-sidebar-left.html"><span>Vos avis</span></a></li>
+							<li class="menu-level-1"><a href="page-404.html"><span>Votre profil</span></a></li>
+							<li class="menu-level-1"><a href="page-404.html"><span>Se déconnecter</span></a></li>
+						</ul>
+					</li> 
+					<li class="menu-level-0"><a href="contact.html"><span>Location</span></a></li>                                
+				</ul>   
+			</nav>    
+		<!--/ topmenu -->
+		</div>
+	</div> <!-- menu end end end -->
+	<!--/ header top bar -->
+<!-- header -->
+<div class="header header_thin" style="background-image:url(images/temp/slider_1_2.jpg)">
+            
+	<div class="header_title">
+    	<h1><span>Trouvez</span> votre trajet</h1>
+    </div>
+
+</div>
+<!--/ header -->
+
+<!-- search -->
+	<div class="middle_row row_white search_row full_search">
+		<div class="container">
+			<form action="trajet_liste.html" class="search_form advsearch_hide clearfix">
+            	<div class="row field_select">
+                    <label class="label_title">Ville de départ:</label>
+                    <select class="select_styled" name="ville_depart">
+						<option value="0" class="default">- CHOISIR -</option>
+                        <option value="1">Tétouan</option>
+                        <option value="2">Tanger</option>
+                        <option value="3">Rabat</option>
+                        <option value="4">Casablanca</option>
+                        <option value="5">Larache</option>
+                        <option value="6">Nador</option>                                                
+                        <option value="7">Ouejda</option>
+                        <option value="8">Hocima</option>                   
+                    </select>
+                </div>
+                
+                <div class="row field_select">
+                    <label class="label_title">Ville d'arrivée:</label>
+                    <select class="select_styled" name="ville_arrivee">
+						<option value="0" class="default">- CHOISIR -</option>
+                        <option value="1">Tétouan</option>
+                        <option value="2">Tanger</option>
+                        <option value="3">Rabat</option>
+                        <option value="4">Casablanca</option>
+                        <option value="5">Larache</option>
+                        <option value="6">Nador</option>                                                
+                        <option value="7">Ouejda</option>
+                        <option value="8">Hocima</option>                                          
+                    </select>
+                </div>
+                
+                <div class="row field_select">
+                    <label class="label_title">Date:</label>
+                    <input class="input_styled" type="text" id="datepicker" name="date"/>
+                </div>
+                
+                <div class="row field_select">
+                	<label class="label_title" id="adv_search_open">&nbsp;</label>
+                    <span class="btn btn_search"><input type="submit" value="Rechercher"></span>
+                </div>
+            </form>
+		</div>
+	</div>
+<!--/ search -->
+
+<!-- middle -->   
+<div id="middle" class="cols2">
+	<div class="container clearfix">  
+    	
+        <div class="title2">
+        	<h2>Tous les trajets (5)</h2>
+        </div>
+		<!-- content -->
+        <div class="content">
+        	
+            <!-- sorting, pages -->
+	        <div class="list_manage">
+            	<div class="inner clearfix">
+                <form action="trajet_liste.html" method="post" class="form_sort">
+                    <span class="manage_title">Trier par:</span>
+                        <select class="select_styled white_select" name="sort_list" id="sort_list">
+                            <option value="1"selected>Horaire de départ</option>
+                            <option value="2" >Prix</option>
+                        </select>
+                </form>    
+                
+                
+                
+                 
+                </div>
+	        </div>
+          	<!--/ sorting, pages -->
+            
+            <!-- offers list -->
+			<div class="offer_list clearfix">
+            
+				<div class="offer_item clearfix">
+                	<div class="offer_image"><img src="images/profile/user1.jpg" width="120px" style="width:120px;height:220px"/>
+						<ul style="padding-left:8px">
+							<li style="font-size:12px"><b>SAMI MASSAADI</b></li>
+							<li style="font-size:12px">25 ans</li>
+							<li style="font-size:12px">Artiste </li>
+						<ul>
+					</div>
+                    <div class="offer_aside">
+                    	<h2><a href="trajet_details.html">Tétouan - Rabat </a></h2>
+                    	<div class="offer_descr" >
+                        	<div class="info_row" style="font-size:16px"><span>Lieu de rendez-vous :</span> MEDINA, Tétouan</div>
+                            <div class="info_row" style="font-size:16px"><span>Lieu de dépose :</span> AGDAL, Rabat</div>
+                            <div class="info_row" style="font-size:16px"><span>Véhicule :</span> Toyota Yaris</div>
+                            <div class="info_row" style="font-size:16px"><span><b>2 places restantes </b></span> Acceptation :  autoumatique</div>
+                        </div>
+                        <div class="offer_data">
+                        	<div class="offer_price">60 DHs</div>
+                            <span class="offer_regist">Mardi 04 Fév 2014</span>
+							<span class="offer_miliage">00:00</span>                     
+                        </div>
+                    </div>
+                </div>
+                
+                
+				<div class="offer_item clearfix">
+                	<div class="offer_image"><img src="images/profile/user1.jpg" width="120px" style="width:120px;height:220px"/>
+						<ul style="padding-left:8px">
+							<li style="font-size:12px"><b>OSSAMA EL ANDALOUSSI</b></li>
+							<li style="font-size:12px">40 ans</li>
+							<li style="font-size:12px">INGENIEUR </li>
+						<ul>
+					</div>
+                    <div class="offer_aside">
+                    	<h2><a href="trajet_details.html">TAN-TAN - FIGIG </a></h2>
+                    	<div class="offer_descr" >
+                        	<div class="info_row" style="font-size:16px"><span>Lieu de rendez-vous :</span> MEDINA, Place NAGA</div>
+                            <div class="info_row" style="font-size:16px"><span>Lieu de dépose :</span> rue 10 October </div>
+                            <div class="info_row" style="font-size:16px"><span>Véhicule :</span> BMW 180 </div>
+                            <div class="info_row" style="font-size:16px"><span><b>2 places restantes </b></span> Acceptation :  autoumatique</div>
+                        </div>
+                        <div class="offer_data">
+                        	<div class="offer_price">70 DHs</div>
+                            <span class="offer_regist">Mardi 04 Fév 2014</span>
+							<span class="offer_miliage">00:00</span>                     
+                        </div>
+                    </div>
+                </div>
+                
+				<div class="offer_item clearfix">
+                	<div class="offer_image"><img src="images/profile/user1.jpg" width="120px" style="width:120px;height:220px"/>
+						<ul style="padding-left:8px">
+							<li style="font-size:12px"><b>Yassine GUARMOUCH</b></li>
+							<li style="font-size:12px">18 ans</li>
+							<li style="font-size:12px">Etudiant</li>
+						<ul>
+					</div>
+                    <div class="offer_aside">
+                    	<h2><a href="trajet_details.html">Tétouan - Marrakech </a></h2>
+                    	<div class="offer_descr" >
+                        	<div class="info_row" style="font-size:16px"><span>Lieu de rendez-vous :</span> MEDINA, Tétouan</div>
+                            <div class="info_row" style="font-size:16px"><span>Lieu de dépose :</span> Gelize Merrakech</div>
+                            <div class="info_row" style="font-size:16px"><span>Véhicule :</span> Bugatti </div>
+                            <div class="info_row" style="font-size:16px"><span><b>2 places restantes </b></span> Acceptation :  autoumatique</div>
+                        </div>
+                        <div class="offer_data">
+                        	<div class="offer_price">80 Dhs</div>
+                            <span class="offer_regist">Mardi 23 Juin 2014</span>
+							<span class="offer_miliage">11:10</span>                     
+                        </div>
+                    </div>
+                </div>
+                
+				<div class="offer_item clearfix">
+                	<div class="offer_image"><img src="images/profile/user1.jpg" width="120px" style="width:120px;height:220px"/>
+						<ul style="padding-left:8px">
+							<li style="font-size:12px"><b>Abdellah FERNASS</b></li>
+							<li style="font-size:12px">35 ans</li>
+							<li style="font-size:12px">Ambassadeur</li>
+						<ul>
+					</div>
+                    <div class="offer_aside">
+                    	<h2><a href="trajet_details.html">Tétouan - Rabat </a></h2>
+                    	<div class="offer_descr" >
+                        	<div class="info_row" style="font-size:16px"><span>Lieu de rendez-vous :</span> MEDINA, Tétouan</div>
+                            <div class="info_row" style="font-size:16px"><span>Lieu de dépose :</span> AKDAL, Rabat</div>
+                            <div class="info_row" style="font-size:16px"><span>Véhicule :</span> Mercides 190</div>
+                            <div class="info_row" style="font-size:16px"><span><b>2 places restantes </b></span> Acceptation :  autoumatique</div>
+                        </div>
+                        <div class="offer_data">
+                        	<div class="offer_price">90 DHs</div>
+                            <span class="offer_regist">Mardi 04 Fév 2014</span>
+							<span class="offer_miliage">17h30</span>                     
+                        </div>
+                    </div>
+                </div>
+                
+				
+     
+                
+                
+                
+            </div>
+            <!--/ offers list -->
+            
+            <!-- pagination -->
+            <div class="tf_pagination">
+	            <div class="inner">
+	            	<a class="page_prev" href="#"><span></span>PRECD</a> 
+                	<a class="page_next" href="#"><span></span>SUIV</a>
+                
+                	<span class="page-numbers page_current">1</span>    
+                      
+	            </div>
+            </div>
+            <!--/ pagination -->
+            
+        </div>
+        <!--/ content -->
+        
+        <!-- sidebar -->
+        <div class="sidebar">
+        	<div class="box">
+            
+            <!-- filter -->
+	        <div class="widget-container widget_adv_filter">
+				<h3 class="widget-title">Ajuster les résultats</h3>
+					
+                <form action="trajet_liste.html" method="get" class="side_form">
+					<div>
+                    <div class="row rangeField" style="visibility: hidden; display:none">
+                        <label class="label_title2">Price Range:</label>
+                        <div class="range-slider">
+                            <input id="price_range" type="hidden" name="price_range" value="5000;60000">
+                        </div>                   
+                        <div class="clear"></div>
+                    </div>
+                    
+              
+            
+					
+                    <div class="row input_styled checklist">
+                        <label class="label_title2" style="font-size:18px">Véhicule</label><br>                            
+                        <input type="radio" name="vehicule_type" id="vehicule_type_1" value="1"> <label for="vehicule_type_1">Luxe<span> (32)</span></label>
+                        <input type="radio" name="vehicule_type" id="vehicule_type_2" value="2"> <label for="vehicule_type_2">Confortable<span> (49)</span></label>
+                        <input type="radio" name="vehicule_type" id="vehicule_type_3" value="3"> <label for="vehicule_type_3">Normal<span> (56)</span></label>
+                        <input type="radio" name="vehicule_type" id="vehicule_type_4" value="4" checked> <label for="vehicule_type_4">Tous <span> (31)</span></label>
+                    </div>
+                    
+                    
+                    <div class="row rowSubmit">
+                        <span class="btn btn_search"><input type="submit" value="Rechercher"></span>
+                    </div>
+                    
+                </form>    
+                
+                <script type="text/javascript" >
+                        jQuery(document).ready(function($) {						
+                            // Price Range Input
+                            
+							$("#miliage").slider({ 
+                                from: 0,
+                                to: 24,
+                                limits: false, 
+                                scale: ['0H', '24H'],
+                                step: 1,
+                                smooth: true,
+								dimension: 'H',
+                                skin: "round_blue"
+                            });
+                        });
+                </script>           
+			</div>
+	        <!--/ filter -->
+            
+            <div class="box_bot"></div>
+            </div>
+        </div>
+        <!--/ sidebar -->  
+              
+    </div>
+</div>
+<!--/ middle -->
+
+<!-- popular brands -->
+<div class="middle_row row_white brand_list">
+    <div class="container">
+            <h2>MOST POPULAR BRANDS:</h2>
+            <ul>
+                <li><a href="#"><img src="images/temp/brand_logo_1.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_2.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_3.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_4.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_5.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_6.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_7.png" alt=""></a></li>
+                <li><a href="#"><img src="images/temp/brand_logo_8.png" alt=""></a></li>
+            </ul>
+            
+            <a href="#" class="link_more">View All Popular Brands</a>
+    </div>
+</div>
+<!--/ popular brands -->
+
+<div class="footer">
+	<div class="container clearfix">
+    
+		<div class="f_col f_col_1">  
+            <h3>Vehicles:</h3>
+            <ul>
+                <li><a href="#"><span>Motorbikes</span></a></li> 
+                <li><a href="#"><span>Compacts</span></a></li>
+                <li><a href="#"><span>Sedans</span></a></li>
+                <li><a href="#"><span>4x4 SUVs</span></a></li>
+                <li><a href="#"><span>Pickups</span></a></li>
+                <li><a href="#"><span>Vans & Trucks</span></a></li>                                
+            </ul>
+        </div>
+        <!--/ footer col 1 -->
+        
+        <div class="f_col f_col_2">        	
+			<h3>Services:</h3>
+            <ul>
+                <li><a href="#"><span>Buy a car</span></a></li> 
+                <li><a href="#"><span>Sell your Car</span></a></li>
+                <li><a href="#"><span>Buy Back</span></a></li>
+                <li><a href="#"><span>Repair Shop </span></a></li>
+            </ul>
+        </div>
+        <!--/ footer col 2 -->
+        
+        <div class="f_col f_col_3">        	
+            <h3>Privacy:</h3>
+            <ul>
+                <li><a href="#"><span>Terms & Conditions</span></a></li> 
+                <li><a href="#"><span>Privacy Statement</span></a></li>
+                <li><a href="#"><span>F.A.Q.</span></a></li>
+                <li><a href="#"><span>Support</span></a></li>
+                <li><a href="#"><span>Confidentiality</span></a></li>
+            </ul>
+        </div>        
+        <!--/ footer col 3 -->
+        
+        <div class="f_col f_col_4">   
+           	<h3>OUR SHOWROOM</h3>
+            <div class="footer_address">
+                <div class="address">
+	                21 Sunset Blvd, Los Angeles<br>
+	                California, 90453
+                </div>
+                <div class="hours">
+                	Mon - Fri: 9AM - 7 PM<br>
+					Sat - Sun: 9AM - 2 PM
+				</div>
+                <a href="contact.html" class="notice">View Bigger Map</a>
+            </div>
+            <div class="footer_map" style="background:url(images/temp/footer_map.jpg);"><a href="contact.html" class="amap"></a></div>
+      	</div>
+        <!--/ footer col 4 -->
+        
+        <div class="clear"></div>
+        
+        <div class="footer_social">
+        	<div class="social_inner">
+			    <a href="#" class="social-google"><span>Google +1</span></a>
+			    <a href="#" class="social-fb"><span>Facebook</span></a>
+			    <a href="#" class="social-twitter"><span>Twitter</span></a>
+			    <a href="#" class="social-dribble"><span>Dribble</span></a>
+			    <a href="#" class="social-linkedin"><span>LinkedIn</span></a>
+			    <a href="#" class="social-vimeo"><span>Vimeo</span></a>
+			    <a href="#" class="social-flickr"><span>Flickr</span></a>
+			    <a href="#" class="social-da"><span>Devianart</span></a>
+            </div>
+		</div>
+        
+        <div class="footer_contacts">
+        	<span class="phone">555-39.84.35</span>
+            <span class="email">hello@autotrader.com</span>
+        </div>
+        
+        <div class="copyright">
+        AutoTrader Wordpress theme by <a href="http://themefuse.com">Themefuse</a>  &nbsp;|&nbsp;  <a href="http://themefuse.com" class="link_white">Premium WordPress themes</a>
+        </div>
+        	        
+    </div> 
+</div>
+
+</div>
+</body>
+</html>

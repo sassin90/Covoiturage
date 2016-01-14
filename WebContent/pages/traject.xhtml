@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html 
+xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+       
+      >
+      <h:head></h:head>
+    <body>
+<h:form id="form">  
+  
+    <p:panel id="panel0" header="New traject" style="margin-bottom:10px;" cellspacing="20" >  
+         
+         <p:growl id="message" showDetail="true" />
+        
+    
+         
+         <h:panelGrid columns="4"> 
+          
+            <h:outputLabel for="ville" value="Ville de depart: *" />  
+              <p:spacer width="15" />
+              <p:autoComplete id="ville" dropdown="true" value="#{userBean.newUser.ville}"   
+                    completeMethod="#{userBean.complete2()}" var="ville" itemLabel="#{ville.ville}" itemValue="#{ville}" converter="villeConverter">
+                    
+                    <f:converter converterId="villeConverter" /> 
+                    </p:autoComplete>   
+           
+  <p:message for="ville" /> 
+            
+          
+            <h:outputLabel value="Ville d'arrivée: *" for="ville_arr" />
+              <p:spacer width="15" />  
+             <p:autoComplete id="ville_arr" dropdown="true" value="#{userBean.newUser.ville}"   
+                    completeMethod="#{userBean.complete2()}" var="ville" itemLabel="#{ville.ville}" itemValue="#{ville}" converter="villeConverter">
+                    
+                    <f:converter converterId="villeConverter" /> 
+                    </p:autoComplete> 
+            <p:message for="ville_arr" /> 
+            
+            </h:panelGrid>  
+            
+            
+            
+            <h:panelGrid columns="2"> 
+             <h:outputLabel value=" Villes de passage: * "/>  
+            <p:selectCheckboxMenu converter="villeConverter" value="#{TB.newTrajet.villes_passage}" label="Villes de passage" filter="true" filterText="Filter" filterMatchMode="startsWith" panelStyle="width:220px">  
+        <f:selectItems value="#{TB.villes2}" var="ville" itemLabel="#{ville.ville}" itemValue="#{ville}" /> 
+        
+      
+    </p:selectCheckboxMenu> 
+             </h:panelGrid>  
+             
+             
+             
+            
+             <h:panelGrid columns="4"> 
+            
+             <h:outputLabel for="D_depart" value="Date de départ: *" /> 
+               <p:spacer width="15" />
+             <p:calendar value="#{TB.newTrajet.date_depart}"  showOn="button"  id ="D_depart" pattern="dd/MM/yyyy HH:mm" mindate="#{TB.getToday()}" />  
+             <br/>
+             
+             <h:outputLabel for="D_arrive" value="Date d'arrivee: *" /> 
+               <p:spacer width="15" />
+             <p:calendar value="#{TB.newTrajet.date_arrive}"  showOn="button" id ="D_arrive" pattern="dd/MM/yyyy HH:mm" mindate="#{TB.getToday()}"/>  
+  </h:panelGrid> 
+  
+  
+     <h:panelGrid columns="3">
+      <h:outputLabel for="prix" value="prix: *" />  
+      <p:spacer width="80" />
+            <p:inputText id="prix" value="#{TB.newTrajet.prix}" required="true" >  
+            </p:inputText>  
+    
+          
+        </h:panelGrid>  
+    </p:panel>  
+    
+     
+  
+    <p:commandButton value="Submit" actionListener="#{TB.createTrajet}" update="message"   />  
+                  
+    
+    
+    
+    
+    
+  
+</h:form>
+                    
+</body>
+</html>
+    	

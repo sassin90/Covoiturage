@@ -1,0 +1,69 @@
+<ui:composition template="/template/layout.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:p="http://primefaces.org/ui"
+    >
+    	<ui:define name="title">Covoiturage 0.1 | Tableau de board</ui:define>
+    		<ui:define name="content">
+  <div class="main">
+
+        <div class="speedbar">
+     
+         <a href="#">Light life Admin Panel</a> &#8250; <a href="#">Dashboard</a>
+        </div>
+
+  	 
+        <!--Alerts-->
+        <div class="grid-1">
+     
+           <div class="title-grid">Modifier les informations de l'utilisateur</div>
+           <div class="content-gird">
+           <h:form id="form">  
+  
+    <p:panel id="panel" header="Modification des informations de l'utilisateur : #{uab.user.email}" style="margin-bottom:10px;">  
+          
+         <p:messages showDetail="false" showSummary="true" autoUpdate="true" closable="true"/>
+         
+          
+        <h:panelGrid columns="3">  
+           
+            <h:outputLabel for="password" value="Ancien mot de passe: *" />  
+            <p:password id="password" value="#{UserAdminBeanG.ancienPassword}" label="Password" redisplay="true"
+             promptLabel="Saisir un mot de passe" />    
+            <p:message for="password" /> 
+            <h:outputLabel for="nvpassword" value="Nouveau mot de passe: *" />  
+             <p:password id="nvpassword" value="#{UserAdminBeanG.nvPassword}" label="Nvpassword" 
+            feedback="true" inline="true"
+             promptLabel="Saisir un mot de passe" weakLabel="Faible" redisplay="true" 
+                        goodLabel="Bon" strongLabel="Fort" />
+                        <p:message for="nvpassword" /> 
+            <h:outputLabel for="email" value="Email: *" />  
+            <p:inputText id="email" value="#{uab.user.email}" label="Email" />    
+            <p:message for="email" />  
+            
+             <h:outputLabel for="nom" value="Nom: *" />  
+            <p:inputText id="nom" value="#{uab.user.lastname}" label="Nom" />    
+            <p:message for="nom" /> 
+  
+              <h:outputLabel for="prenom" value="Prénom: *" />  
+            <p:inputText id="prenom" value="#{uab.user.firstname}" label="Prenom"  />    
+            <p:message for="prenom" /> 
+          
+            
+        </h:panelGrid>   
+    </p:panel>  
+  
+    <p:commandButton value="Submit" update="panel" actionListener="#{UserAdminBeanG.doUpdateUserParams}" />    
+  
+</h:form>  
+           </div>
+        </div>
+		<!--Alerts end-->
+
+ </div><!-- END MAIN-->
+
+   		</ui:define>
+ 
+    	</ui:composition>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html>
+<html   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+	<title><ui:insert name="title">Covoiturage 0.1</ui:insert></title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<link href="${facesContext.externalContext.requestContextPath}/resources/resources_client/style.css" media="screen" rel="stylesheet"/>
+<link href="${facesContext.externalContext.requestContextPath}/resources/resources_client/screen.css" media="screen" rel="stylesheet"/>
+<!-- custom CSS -->
+<link href="${facesContext.externalContext.requestContextPath}/resources/resources_client/custom.css" media="screen" rel="stylesheet"/>
+<!-- main JS libs  -->
+<script>
+	var jq = jQuery.noConflict();
+</script>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/libs/modernizr.min.js"></script>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/libs/respond.min.js"></script>					 
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/libs/jquery.min.js"></script>
+<!-- scripts  -->
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/jquery.easing.min.js"></script>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/general.js"></script>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/hoverIntent.js"></script>
+<!-- carousel -->
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/jquery.carouFredSel.min.js"></script>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/jquery.touchSwipe.min.js"></script>
+<!-- styled select -->
+<link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/resources_client/css/cusel.css"/>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/js/cusel-min.js"></script>
+<link href="${facesContext.externalContext.requestContextPath}/resources/resources_client/rs-plugin/css/settings.css" media="screen" rel="stylesheet"/>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="${facesContext.externalContext.requestContextPath}/resources/resources_client/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    </h:head>
+ 
+
+		 
+    <h:body>
+    <div class="body_wrap homepage">
+	 <ui:insert name="header" >
+		  <ui:include src="/template/template_client/header.xhtml" />
+		</ui:insert>
+		
+	
+ 
+ 					<ui:insert name="content" >
+	 	  				
+	 	  				<!-- header -->
+<div class="header" style="background:#000">
+            
+    <!-- header slider -->
+    <div class="fullwidthbanner-container"> 
+		<div class="fullwidthbanner">
+        	<ul>
+				<li data-transition="fade" data-slotamount="1" data-masterspeed="500">
+					<img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/diaporama/3.jpg" data-fullwidthcentering="on"/>
+                    
+                    <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+                    <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+					<div class="caption sfl white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
+                         <a href="#"><strong>Voyagez moins cher en toute confiance</strong></a>
+                    </div>
+                    <div class="caption sfr white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
+                         <span>Authenticité et Assurance</span>
+                    </div>
+                    
+				</li>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
+					<img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/diaporama/2.jpg" data-fullwidthcentering="on"/>
+                    
+                    <div class="caption sft text_line" data-x="550" data-y="250" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+                    <div class="caption sfb text_line" data-x="550" data-y="360" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+                    
+					<div class="caption sft white_text big_title" data-x="550" data-y="280" data-speed="900" data-start="500" data-easing="easeOutExpo">
+                         <a href="#"><strong>Trouvez votre covoiturage</strong></a>
+                    </div>
+                    <div class="caption sfb white_text subtitle" data-x="550" data-y="317" data-speed="900" data-start="700" data-easing="easeOutExpo">
+                         Choisissez parmi des <span> millers </span> de conducteurs en Maroc
+                    </div>
+				</li>
+				<li data-transition="fade" data-slotamount="1" data-masterspeed="500">
+					<img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/diaporama/1.jpg" data-fullwidthcentering="on"/>
+                    
+                    <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+                    <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+					<div class="caption sfl white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
+                         <a href="#"><strong>Grâce à vous : </strong></a>
+                    </div>
+                    <div class="caption sfr white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
+                         <span>50</span> tonnes de CO2 économisées sur <span>1 000</span> trajets
+                    </div>
+                    
+				</li>
+            </ul>
+        </div>          
+	</div>
+    
+    <script>
+
+
+		jQuery(document).ready(function($) {
+
+			if ($.fn.cssOriginal!=undefined)
+				$.fn.css = $.fn.cssOriginal;
+
+			$('.fullwidthbanner').revolution({
+					delay:5000,
+					startwidth:950,
+					startheight:617,
+
+					onHoverStop:"off",						// Stop Banner Timet at Hover on Slide on/off
+					hideThumbs:0,
+					navigationType:"bullet",				// bullet, thumb, none
+					navigationArrows:"none",				// nexttobullets, solo (old name verticalcentered), none
+
+					navigationStyle:"round",				// round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+					
+					navigationHAlign:"center",				// Vertical Align top,center,bottom
+					navigationVAlign:"bottom",				// Horizontal Align left,center,right
+					navigationHOffset:0,
+					navigationVOffset:23,
+
+					touchenabled:"on",						// Enable Swipe Function : on/off
+
+					stopAtSlide:-1,							// Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+					stopAfterLoops:-1,						// Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+
+					hideCaptionAtLimit:0,					// It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+					hideAllCaptionAtLilmit:0,				// Hide all The Captions if Width of Browser is less then this value
+					hideSliderAtLimit:0,					// Hide the whole slider, and stop also functions if Width of Browser is less than this value
+
+					fullWidth:"on",
+					shadow:0								//0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+
+				});
+			});
+	</script>
+    <!--/ header slider -->
+
+</div>
+
+    
+	<div class="middle_row row_white search_row">
+		<div class="container">
+			<b style="font-size:22px;">Trouvez votre covoiturage !</b><br/><br/>
+			<form action="#" class="search_form advsearch_hide clearfix">
+            	<div class="row field_select">
+                    <label class="label_title">Ville de départ:</label>
+                    <select class="select_styled" name="ville_depart">
+                        <option value="1">Tétouan</option>
+                        <option value="2">Tanger</option>
+                        <option value="3">Rabat</option>
+                        <option value="4">Casablanca</option>
+                        <option value="5">Larache</option>
+                        <option value="6">Nador</option>                                                
+                        <option value="7">Ouejda</option>
+                        <option value="8">Hocima</option>                   
+                    </select>
+                </div>
+                
+                <div class="row field_select">
+                    <label class="label_title">Ville d'arrivée:</label>
+                    <select class="select_styled" name="ville_arrivee">
+                        <option value="1">Tétouan</option>
+                        <option value="2">Tanger</option>
+                        <option value="3">Rabat</option>
+                        <option value="4">Casablanca</option>
+                        <option value="5">Larache</option>
+                        <option value="6">Nador</option>                                                
+                        <option value="7">Ouejda</option>
+                        <option value="8">Hocima</option>                                          
+                    </select>
+                </div>
+                
+                <div class="row field_select">
+                    <label class="label_title">Date:</label>
+                    <input class="input_styled" type="text" id="datepicker" name="date"/>
+                </div>
+                
+                <div class="row field_select">
+                	<label class="label_title" id="adv_search_open"></label>
+                    <span class="btn btn_search"><input type="submit" value="Rechercher" /></span>
+                </div>
+            </form>
+			<br/>	
+			<b style="font-size:22px;padding-right:56px;float:left">Vous avez une voiture ?</b><span class="publier_car"></span>
+			<a href="publier.html"><span class="publier">Proposer un trajet</span></a>
+			<br/>
+		</div>
+	</div>
+	
+	<div class="middle_row row_light_gray">
+		<div class="container clearfix">  
+			<!-- week offer -->
+            <div class="week_offer">
+            	<h2>Comment faire du covoiturage ?</h2>
+                <div class="offer_box">
+	                <div class="offer_image">
+						<video width="460" height="259" controls="controls">
+							<source src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/video/comment.mp4" type="video/mp4" />
+						</video>
+					</div>
+                    <div class="offer_text">
+                    	<h3><a href="offers-details.html">Le covoiturage, solution de transport gagnant-gagnant</a></h3>
+                        <div class="offer_descr">
+                        Grâce à vous : déjà 500 000 tonnes de CO2 économisées sur 10 millions de trajets 
+						</div>
+                    </div>
+                    <div class="link_more"><a href="#">View More Details</a></div>
+                </div>
+            </div>
+            <!--/ week offer -->
+            <!-- special offer -->
+            <div class="special_offers">
+            	<h2>LES MEILLEURS PRIX</h2>
+                
+                <div id="special_offers">
+                	
+                    <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/DSC_0041.JPG" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Tanger - Meknès</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> BNI MAKKADA, Tanger</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> TOULAL, Meknès</div>
+                            <div class="info_row"><span>Date de départ :</span> Vendredi 07/02 - 15:45</div>
+                            <div class="special_price">61.00 DH</div>
+                        </div>
+                    </div>
+                    <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/DSCF0944.JPG" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Nador - Casablanca</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> AV HASSAN II, Nador</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> ANFA, Casablanca</div>
+                            <div class="info_row"><span>Date de départ :</span> Jeudi 06/02 - 17:40</div>
+                            <div class="special_price">150.00 DH</div>
+                        </div>
+                    </div>
+					<div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/DSCF1430.JPG" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Tétouan - Rabat</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> CHOMOÖ, Martil</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> AKDAL, Rabat</div>
+                            <div class="info_row"><span>Date de départ :</span> Lundi 13/02 - 19:20</div>
+                            <div class="special_price">50.00 DH</div>
+                        </div>
+                    </div>
+                    <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/ELMAROUFI_Amine_GI2.jpg" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Tanger - Meknès</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> BNI MAKKADA, Tanger</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> TOULAL, Meknès</div>
+                            <div class="info_row"><span>Date de départ :</span> Mardi 14/02 - 07:00</div>
+                            <div class="special_price">60.00 DH</div>
+                        </div>
+                    </div>
+                    <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/FOTOcv.jpg" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Nador - Casablanca</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> AV HASSAN II, Nador</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> ANFA, Casablanca</div>
+                            <div class="info_row"><span>Date de départ :</span> Vendredi 17/02 - 05.00</div>
+                            <div class="special_price">150.00 DH</div>
+                        </div>
+                    </div>
+                    
+                      <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/IMG_0733.JPG" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Fes - Chefchaouen</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> AV Almassira, Fes</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> Ras Lma, Chefchaouen</div>
+                            <div class="info_row"><span>Date de départ :</span> Mardi 04/02  - 14:30</div>
+                            <div class="special_price">90.00 DH</div>
+                        </div>
+                    </div>
+                    
+                    
+                     <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/30-01-2014 23-31-49.png" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Smara - Agadir</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> AV ALWAHA, SMARA</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> Centre ville, Agadir</div>
+                            <div class="info_row"><span>Date de départ :</span> Mercredi 05/02 - 6:30</div>
+                            <div class="special_price">110.00 DH</div>
+                        </div>
+                    </div>
+                    
+                     <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/nada.jpg" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">Errachidia - Oujda</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> AV ALWOROUD, Errachidia</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> Gare routière, Oujda</div>
+                            <div class="info_row"><span>Date de départ :</span> Jeudi 13/02 - 10.00</div>
+                            <div class="special_price">140.00 DH</div>
+                        </div>
+                    </div>
+                    
+                    
+                     <div class="special_item">
+                    	<div class="special_image">
+                    	<a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/profile/DSC_0004.JPG" width="134px" height="134px" alt=""/></a>
+                        </div>
+                        <div class="special_text">
+                        	<h3><a href="offers-details.html">ASSA - ALKHAMISSAT</a></h3>
+                            <div class="info_row"><span>Lieu de rendez-vous :</span> AV ARFOUD, ASSA</div>
+                            <div class="info_row"><span>Lieu de dépose :</span> Gare routière, ALKHAMISSAT</div>
+                            <div class="info_row"><span>Date de départ :</span> Dimanche 16/02 - 11.50</div>
+                            <div class="special_price">180.00 DH</div>
+                        </div>
+                    </div>
+					
+                </div>
+                <a class="prev" id="special_offers_prev" href="#"></a>
+            	<a class="next" id="special_offers_next" href="#"></a>
+                
+                <div class="link_more"><a href="C:/Users/ALOULEN/Desktop/cov_2/trajet_liste.html">Voir tous les trajets</a></div>
+            
+                <script>	
+				jQuery(document).ready(function($) {
+					function carSpecicalInit() {
+						var car_specical = $('#special_offers');
+						car_specical.carouFredSel({
+							prev : "#special_offers_prev",
+							next : "#special_offers_next",
+							infinite: true,
+							circular: false,
+							auto: false,
+							width: '100%',
+							direction: "down",						
+							scroll: {
+								items : 1
+							}
+						});						
+					}
+					$(window).load(function() {
+						carSpecicalInit();
+					}); 
+					var resizeTimer;
+					$(window).resize(function() {
+						clearTimeout(resizeTimer);
+						resizeTimer = setTimeout(carSpecicalInit, 100);
+					});							          
+				});
+			    </script> 
+            </div>           
+            <!--/ special offer -->			
+		</div>
+	</div>
+	
+    <!-- car types -->
+	<div class="middle_row row_gray">
+		<div class="container clearfix">  
+			
+            <div class="blog_list">
+            	<span style="text-align: center;"><h2>Quoi de neuf ?</h2></span>
+				
+	                <div class="blog_item">
+						<div class="img_container" > <img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/blog/1.jpg"  width="180px" height="300px"/> </div>
+						<a href="#"><strong>Nouvelle partenariat</strong></a>
+					</div>
+					
+					<div class="blog_item">
+						<div class="img_container" ><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/blog/2014-01-30_17-28-35.jpg"  width="180px" height="300px" style="float:top" /></div>
+						<a href="#"><strong>Funny day</strong></a>
+					</div>
+					
+					<div class="blog_item">
+						<div class="img_container" ><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/blog/99.jpg"  width="180px" height="115px" style="float:top" /></div>
+						<a href="#"><strong>Covoiturage et planète</strong></a>
+					</div>
+					
+					<div class="blog_item">
+						<div class="img_container" ><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/blog/header1.jpg"  width="180px" height="115px" style="float:top" /></div>
+						<a href="#"><strong>Nouvelle plateforme</strong></a>
+					</div>
+					
+					<div class="blog_item">
+						<div class="img_container" ><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/blog/images (2).jpg"  width="180px" height="115px" style="float:top" /></div>
+						<a href="#"><strong>Où vous voulez quand vous voulez</strong></a>
+					</div>
+					
+            </div>		
+		</div>
+		<center><a href="#" class="link_more">VOIR TOUS LES ARTICLES DU BLOG</a></center><br/><br/>
+	</div>
+    <!--/ car types -->
+    
+	<!-- latest_offers -->
+	<div class="middle_row latest_offers">
+		<div class="container clearfix">         			
+        	<center><h2>ALLEZ-Y EN COVOITURAGE !</h2></center>
+                     
+            <a href="#" class="link_more">Voir tous les événements de l'Agenda</a>
+		</div>
+            
+        <div id="latest_offers">
+            <div class="latest_item">
+             <a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/1.jpg" alt="" /></a>
+            <a href="offers-details.html">Maroc WEB Awards</a>
+            </div>
+            <div class="latest_item">
+            <a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/2.jpg" alt="" /></a>
+            <a href="offers-details.html">Salon internationnal des professionnelles</a>
+            </div>
+            
+            <div class="latest_item">
+            <a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/3.jpg" alt="" /></a>
+            <a href="offers-details.html">La Dictée du Maroc</a>
+            </div>
+            <div class="latest_item">
+            <a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/6.jpg" alt="" /></a>
+            <a href="offers-details.html">Rally Aicha des Gazelles</a>
+            </div>
+            <div class="latest_item">
+            <a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/7.jpg" alt="" /></a>
+            <a href="offers-details.html">Grand prix Hassan II</a>
+            </div>
+            <div class="latest_item">
+            <a href="offers-details.html"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/9.jpg" alt="" /></a>
+            <a href="offers-details.html">Marathon des Sables</a>
+            </div>
+           
+        </div>
+        
+        <a class="prev" id="latest_offers_prev" href="#"></a>
+        <a class="next" id="latest_offers_next" href="#"></a>
+                    
+        <script>	
+        jQuery(document).ready(function($) {	
+			var screenRes = $(window).width();
+			
+            $('#latest_offers').carouFredSel({
+                prev : "#latest_offers_prev",
+                next : "#latest_offers_next", 
+                infinite: false,
+                circular: true,
+                auto: false,
+                width: '100%',				
+                scroll: {
+                    items : 1,
+					onBefore: function (data) {
+						if (screenRes > 900) {
+						data.items.visible.eq(0).animate({opacity: 0.15},300);
+						data.items.old.eq(-1).animate({opacity: 1},300);
+						data.items.visible.eq(-1).animate({opacity: 0.15},300);		               
+						}
+		            },
+					onAfter: function (data) {
+						if (screenRes > 900) {
+						data.items.old.eq(0).animate({opacity: 1},300);	
+						}
+		            }
+                }
+            });			
+			if (screenRes > 900) {
+				var vis_items = $("#latest_offers").triggerHandler("currentVisible");
+				vis_items.eq(-1).animate({opacity: 0.15},100);
+				vis_items.eq(0).animate({opacity: 0.15},100);
+			}
+        });
+        </script>             
+	</div>
+    <!--/ latest_offers -->
+    
+    <!-- testimonials -->
+    <div class="middle_row row_white testimonials"><br/><br/>
+		<center><h2>Derniers avis aujourd'hui</h2></center>
+		<div class="container">
+            <div class="slider_container clearfix" id="testimonials">                      	 
+                <div class="slider-item">
+                    <div class="quote-text">
+                    <p>Ce mail juste pour féliciter l'équipe <a href="#">COVOITURONS</a> et vous remercier du super fonctionnement du site, des valeurs et obligations qui sont réglos et enfin du bon Total reçu hier avec le courrier d'accompagnement.</p>
+                    </div>
+                    <div class="quote-author"><span>BOUZID Yassine</span>, Conducteur</div>                 
+                </div>
+                <div class="slider-item">
+                    <div class="quote-text">
+                    <p>Que l'on soit conducteur ou passager, le plus intéressant c'est de pouvoir partager un moment convivial  pendant le trajet rencontrer des gens de tous horizons, et de savoir apprécier la compagnie des autres, et le plaisir de rendre service, faire preuve d'indulgence!</p>
+                    </div>
+                    <div class="quote-author"><span>BENHAMZA Salsabil</span>, Passager</div>
+                </div>
+                <div class="slider-item">
+                    <div class="quote-text">
+                    <p>
+                    Je pratique le covoiturage via votre site depuis janvier et je tenais à vous dire que je suis très satisfaite du service que vous proposez. Les personnes que j'ai rencontré ont toujours été très sympa, ponctuelles et arrangeantes. J'ai recommandé ce service à tous mes proches :)
+					</p>
+					<p>Voilà, longue vie à <a href="#">COVOITURONS</a> ! </p>
+                    
+                    </div>
+                    <div class="quote-author"><span>ALOULEN Zakariae</span>, Partner</div>
+                </div>	                        
+            </div>
+            <a class="prev" id="testimonials_prev" href="#"></a>
+            <a class="next" id="testimonials_next" href="#"></a>
+            <script>
+			jQuery(document).ready(function($) {
+				$('#testimonials').carouFredSel({
+					next : "#testimonials_next",
+					prev : "#testimonials_prev",
+					infinite: false,
+					items: 1,
+					auto: false,
+					scroll: {
+						items : 1,
+						fx: "crossfade",
+						easing: "linear",
+						duration: 300
+					}
+				});
+			});
+            </script>    
+            
+        </div>
+	</div>
+    <!--/ testimonials -->
+    
+    <!-- popular brands -->
+	<div class="middle_row row_light_gray brand_list">
+		<div class="container">
+	            <h2>Partenaires commerciales:</h2>
+	            <ul>
+	            	<li><a href="#"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/brand_logo_1.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/brand_logo_2.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/brand_logo_3.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/brand_logo_4.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="${facesContext.externalContext.requestContextPath}/resources/resources_client/images/temp/brand_logo_5.jpg" alt="" /></a></li>
+	            </ul>
+	            
+        </div>
+	</div>
+    <!--/ popular brands -->
+    
+	 	  				
+	   				</ui:insert>   
+	   
+	
+	  
+	   	</div>
+	   	
+	   	
+	   	<ui:insert name="footer" >
+		  <ui:include src="/template/template_client/footer.xhtml" />
+		</ui:insert>
+	   	
+	</h:body>
+</html>

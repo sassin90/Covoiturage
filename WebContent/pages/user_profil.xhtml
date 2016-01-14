@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html 
+xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+       
+      >
+      <h:head></h:head>
+    <body>
+  
+  <p:column selectionMode="multiple" style="width:2%" />  
+       
+       
+       <h:form id="form">  
+  
+    <p:panel id="panel" header="New User" style="margin-bottom:10px;">  
+    <p:messages showDetail="false" showSummary="true" autoUpdate="true" closable="true"/>
+          
+        <h:panelGrid columns="">  
+  
+     <p:row>
+    <p:column><h:outputLabel for="password" value="Ancien mot de passe: *" />  </p:column>
+    <p:spacer width="25" />
+              <p:column><p:password id="password" value="#{userBean.ancienPassword}" label="Password" redisplay="true"
+             promptLabel="Saisir un mot de passe" />    
+            <p:message for="password" /> </p:column>
+            </p:row>
+            <p:row>
+            <p:column><h:outputLabel for="nvpassword" value="Nouveau mot de passe: *" />  </p:column>
+             <p:spacer width="8" />
+            <p:column> <p:password id="nvpassword" value="#{userBean.nvPassword}" label="Nvpassword" 
+            feedback="true" inline="true"
+             promptLabel="Saisir un mot de passe" weakLabel="Faible" redisplay="true" 
+                        goodLabel="Bon" strongLabel="Fort" />
+                        <p:message for="nvpassword" /> </p:column>
+  
+    </p:row>
+
+    <p:row>  
+        <p:column> <h:outputText value="Civilité:* " /> </p:column>  
+        <p:spacer width="136"  height="10" />
+        <p:column><p:inputText id="civilite" disabled="true" value="#{userBean.user.civilite}">  
+          
+        </p:inputText> 
+            </p:column>  
+            
+              
+    </p:row>  
+    
+    
+    
+    
+  
+    <p:row>  
+        <p:column > <h:outputLabel for="nom" value="Nom: *" /> </p:column>  
+        <p:spacer width="151" height="10" />
+        <p:column > <p:inputText id="nom" value="#{userBean.user.firstname}" required="true" >  
+            </p:inputText>  </p:column>  
+    </p:row>  
+  
+  
+    <p:row>  
+        <p:column > <h:outputLabel for="prenom" value="Prenom: *" /> </p:column>  
+        <p:spacer width="128" height="10" />
+        <p:column > <p:inputText id="prenom" value="#{userBean.user.lastname}" required="true" >  
+            </p:inputText>  </p:column>  
+            
+    </p:row>  
+    
+    
+    <p:row>  
+        <p:column > <h:outputLabel for="telephone" value="Telephone: *" /> </p:column> 
+        <p:spacer width="100" /> 
+        <p:column > <p:inputMask  id="telephone" value="#{userBean.user.telephone}" mask="9999-999999" >
+             
+             </p:inputMask>    </p:column>  
+    </p:row> 
+    
+
+    
+    
+    
+ 
+         
+                </h:panelGrid> 
+                
+                 <h:panelGrid columns="3">   
+                 
+          <h:outputLabel for="apropos" value="Apropos:" />  
+           
+          <p:spacer width="120" />
+          
+            <p:inputTextarea id="apropos"  value="#{userBean.user.apropos}" rows="5" cols="50" counter="counter" maxlength="500"       
+    counterTemplate="{0} characteres." autoResize="false"/>  
+        <p:outputLabel value="" /> 
+          <p:outputLabel value="" /> 
+            <h:outputText id="counter" /> 
+            
+            
+            
+            
+               
+                
+              </h:panelGrid>  
+    </p:panel>  
+    
+    <h:form enctype="multipart/form-data">
+  
+  
+                      
+    <p:fileUpload process="@form" invalidSizeMessage="La taille du fichier ne doit pas dépasser 2MO." invalidFileMessage="Le type du fichier est invalide (Types autorisés : xls, xlsx)." fileUploadListener="#{profilBean.handleFileUpload}" mode="advanced" dragDropSupport="false"  
+                  multiple="true" update="messages" sizeLimit="2097152" >
+                  </p:fileUpload>  
+                  
+  
+    <p:growl id="messages" showDetail="true"/>  
+  
+</h:form> 
+  
+    <p:commandButton value="Submit" actionListener="#{userBean.doUpdateUserParams}" update="panel" /> 
+                  
+   
+  
+</h:form>  
+
+
+
+
+           <p:growl id="growl" showDetail="true"/>
+           <script type="text/javascript">   
+
+           function handleLoginRequest(xhr, status, args,formName) {  
+               
+        	   if(!args.validationFailed) {  
+                   clearForm(formName);
+               }   
+                
+           }
+                  
+        function clearForm(formName){
+        jQuery('#'+formName).each(function(){
+	        this.reset();
+	});
+        }
+        
+        </script>  
+                            
+</body>
+</html>
+    	

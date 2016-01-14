@@ -1,0 +1,244 @@
+<ui:composition template="/template/layout.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    >
+    	<ui:define name="title">Covoiturage 0.1 | Tableau de board</ui:define>
+    		<ui:define name="content">
+  <div class="main">
+
+        <div class="speedbar">
+         <a href="#">Covoiturage 0.1</a> &#8250; <a href="#">Dashboard</a>
+        </div>
+
+  	   <!--Reports-->
+       
+
+        <!--Reports end-->
+        <!--Alerts-->
+        <div class="grid-1 inactive" >
+           <div class="title-grid">Alerts</div>
+           <div class="content-gird" style="display: none;">
+           <p:scrollPanel style="width:730px;height:1000px;"> 
+           <h:form id="form">  
+  
+    <p:growl id="messages" showDetail="true"/>  
+  
+    <p:dataTable paginator="true" rows="10" var="user" value="#{userBean.users}" id="userList" editable="true"  selection="#{userBean.selectedUsers}" rowKey="#{user.id}" >  
+  
+        <f:facet name="header">  
+           Gestion des utilisateurs  
+        </f:facet>  
+   
+        <p:ajax event="rowEdit" listener="#{userBean.onEdit}" update=":form:messages" />  
+        <p:ajax event="rowEditCancel" listener="#{userBean.onCancel}" update=":form:messages" />  
+  
+  
+  <p:column selectionMode="multiple" />  
+       
+  
+  <p:column headerText="Firstname" sortBy="firstname" filterBy="firstname">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.firstname}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.firstname}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>  
+  
+ 
+        
+         <p:column headerText="Lastname" sortBy="lastname" filterBy="lastname">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.lastname}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.lastname}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>
+        
+         <p:column headerText="Username" sortBy="username" filterBy="username">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.username}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.username}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>
+        
+        <p:column headerText="Email" sortBy="email" filterBy="email">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.email}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.email}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>    
+        
+        
+        
+        <p:column headerText="Ville" sortBy="ville" filterBy="ville">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.ville}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.ville}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>   
+        
+        
+        <p:column headerText="CIN" sortBy="cin" filterBy="cin">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.cin}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.cin}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>  
+        
+        <p:column headerText="Telephone" sortBy="telephone" filterBy="telephone">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.telephone}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.telephone}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column> 
+        
+        <p:column headerText="Age" sortBy="age" filterBy="age">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+               
+                    <h:outputText value="#{user.age}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{user.age}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column> 
+  
+        <p:column>  
+            <p:rowEditor />  
+           
+        </p:column>  
+  <f:facet name="footer">  
+            <p:commandButton id="viewButton" value="Ajouter" icon="ui-icon-plus " onclick="PF('dlg').show()" />  
+        
+            <p:commandButton id="viewButton2" value="Supprimer" icon="ui-icon-trash"  actionListener="#{userBean.doDeleteUsers}" update=":form:userList"
+                             />  
+        </f:facet>
+    </p:dataTable>  
+
+</h:form>  
+</p:scrollPanel>
+
+<p:dialog id="dlg" header="Login" widgetVar="dlg" resizable="false" modal="true" showEffect="explode" hideEffect="explode">  
+  <h:form id="newUserForm">
+        <h:panelGrid columns="2" cellpadding="5">  
+            <h:outputLabel for="username" value="Username:" />  
+            <p:inputText value="#{userBean.newUser.username}"   
+                    id="username" label="username" />  
+                    
+            <h:outputLabel for="password" value="Password:" />  
+            <p:password id="password" value="#{userBean.newUser.password}" feedback="true" inline="true" />    
+                    
+                    <h:outputLabel for="email" value="Email:" />  
+            <p:inputText value="#{userBean.newUser.email}"   
+                    id="email" label="email" />
+                    
+            <h:outputLabel for="firstname" value="Firstname:" />  
+            <p:inputText value="#{userBean.newUser.firstname}"   
+                    id="firstname" label="firstname" />  
+                    
+            <h:outputLabel for="lastname" value="Lastname:" />  
+            <p:inputText value="#{userBean.newUser.lastname}"   
+                    id="lastname" label="lastname" />  
+
+            <h:outputLabel for="ville" value="Ville:" />  
+            <p:inputText value="#{userBean.newUser.ville}"   
+                    id="ville" label="ville" />  
+                    
+                     <h:outputLabel for="age" value="Age:" />  
+            <p:inputText value="#{userBean.newUser.age}"   
+                    id="age" label="age" /> 
+                    
+                    <h:outputLabel for="cin" value="CIN:" />  
+            <p:inputText value="#{userBean.newUser.cin}"   
+                    id="cin" label="cin" /> 
+                    
+                    <h:outputLabel for="telephone" value="Telephone:" />  
+            <p:inputText value="#{userBean.newUser.telephone}"   
+                    id="telephone" label="telephone" />  
+                     
+
+
+                    
+              
+                     <f:facet name="footer">  
+                <p:commandButton id="saveButton" value="Créer"   
+                    oncomplete="handleLoginRequest(xhr, status, args, 'newUserForm')" actionListener="#{userBean.createUser}" update=":growl, :form:userList" />
+                  
+                  
+                   
+    
+                      
+            </f:facet>
+            
+              
+            
+        </h:panelGrid>  
+          </h:form>
+    </p:dialog>
+<p:growl id="growl" showDetail="true"/>
+
+<script type="text/javascript">  
+    function handleLoginRequest(xhr, status, args, formName) {  
+        if(args.validationFailed || !args.userCreated) {  
+            PF('dlg').jq.effect("shake", { times:5 }, 100);  
+        }   
+        else {  
+            PF('dlg').hide();  
+            clearForm(formName);
+        }  
+    }
+
+    function clearForm(formName){
+        jQuery('#'+formName).each(function(){
+	        this.reset();
+	});
+    }
+      
+</script>  
+                  
+           </div>
+        </div>
+		<!--Alerts end-->
+
+ </div><!-- END MAIN-->
+
+   		</ui:define>
+ 
+    	</ui:composition>
